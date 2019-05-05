@@ -174,8 +174,8 @@ def train(
             nt = len(targets)
 
             # Plot images with bounding boxes
-            if epoch == 0 and i == 0:
-                plot_images(imgs=imgs, targets=targets, fname='train_batch0.jpg')
+            # if epoch == 0 and i == 0:
+            #     plot_images(imgs=imgs, targets=targets, fname='train_batch0.jpg')
 
             # SGD burn-in
             if epoch == 0 and i <= n_burnin:

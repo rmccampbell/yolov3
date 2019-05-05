@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import argparse
 import time
 from sys import platform
@@ -64,6 +67,9 @@ def detect(
     for i, (path, img, im0, vid_cap) in enumerate(dataloader):
         t = time.time()
         save_path = str(Path(output) / Path(path).name)
+
+        # Normalize original image size
+        im0 = cv2.resize(im0, (512, 512*im0.shape[0]//im0.shape[1]))
 
         # Get detections
         img = torch.from_numpy(img).unsqueeze(0).to(device)

@@ -1,0 +1,6 @@
+classes=10
+train=/scratch/rnm6u/svhn/train.txt
+valid=/scratch/rnm6u/svhn/test.txt
+names=data/svhn.names
+backup=backup/
+eval=svhn
